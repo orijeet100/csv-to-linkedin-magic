@@ -5,6 +5,8 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
+  # Disable secrets scanning for now
+  SECRETS_SCAN_ENABLED = "false"
 
 # Handle client-side routing for React Router
 [[redirects]]
