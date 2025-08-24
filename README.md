@@ -1,4 +1,15 @@
-# Welcome to your Lovable project
+# CSV Profile Extractor
+
+A professional tool for processing CSV files, extracting LinkedIn profiles, and automatically exporting data to Google Sheets with OAuth2 integration.
+
+## Features
+
+- **Multiple CSV Upload**: Upload and process multiple CSV files simultaneously
+- **LinkedIn Profile Extraction**: Automatically detect and extract LinkedIn URLs and names
+- **Progress Tracking**: Real-time progress bars for file processing
+- **Google Sheets Integration**: Direct export to Google Sheets with automatic OAuth2 authentication
+- **State Persistence**: Maintains uploaded data during authentication flow
+- **CSV Export**: Fallback option to download extracted data as CSV
 
 ## Project info
 
@@ -59,6 +70,7 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Google Sheets API (OAuth2)
 
 ## How can I deploy this project?
 
