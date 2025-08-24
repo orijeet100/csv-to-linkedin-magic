@@ -52,12 +52,20 @@ Ensure your repository has:
 1. Go to **Site settings** → **Environment variables**
 2. Add these variables:
    ```
-   VITE_GOOGLE_CLIENT_ID=your_google_client_id
-   VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret
-   VITE_GOOGLE_SHEET_ID=your_google_sheet_id
-   VITE_GOOGLE_PROJECT_ID=your_google_project_id
+   VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
+   VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+   VITE_GOOGLE_SHEET_ID=your_google_sheet_id_here
+   VITE_GOOGLE_PROJECT_ID=your_google_project_id_here
    ```
 3. **Redeploy** your site after adding variables
+
+**Example format (replace with your actual values):**
+```
+VITE_GOOGLE_CLIENT_ID=123456789-abcdefghijklmnop.apps.googleusercontent.com
+VITE_GOOGLE_CLIENT_SECRET=GOCSPX-YourSecretHere
+VITE_GOOGLE_SHEET_ID=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms
+VITE_GOOGLE_PROJECT_ID=your-project-name-123456
+```
 
 ### 4. Update Google Cloud Console
 
@@ -112,6 +120,14 @@ Ensure your repository has:
 - ✅ **Client secrets** stored securely
 - ✅ **Scopes limited** to necessary permissions
 
+### **Secrets Scanning:**
+- ✅ **No credentials in code** - Use environment variables
+- ✅ **No secrets in documentation** - Use placeholder values
+- ✅ **Netlify auto-detects** and blocks exposed secrets
+- ✅ **Build fails** if secrets are found (security feature)
+
+**Important:** Never commit actual API credentials to your repository. Netlify's secrets scanning will detect and block the build if it finds real credentials in your code or documentation.
+
 ## 🚨 Common Issues & Solutions
 
 ### **Build Failures:**
@@ -138,6 +154,18 @@ Ensure your repository has:
 - **Verify redirect URIs** in Google Cloud Console
 - **Check environment variables** in Netlify
 - **Ensure HTTPS** is used in production
+
+### **Secrets Scanning Errors:**
+- **Problem**: `Secrets scanning found secrets in build output or repo code`
+- **Cause**: Actual API credentials found in code or documentation
+- **Solution**: 
+  1. **Remove real credentials** from all files
+  2. **Use placeholder values** in documentation
+  3. **Store credentials** only in Netlify environment variables
+  4. **Check for hardcoded values** in your codebase
+- **Prevention**: Never commit `.env` files or real credentials
+
+**Note:** The build output (`dist/assets/index-*.js`) contained secrets because they were hardcoded in the documentation. After removing them, the build output will be clean.
 
 ### **CORS Issues:**
 - **Verify Google API** endpoints are accessible

@@ -18,9 +18,9 @@ VITE_GOOGLE_PROJECT_ID=your_google_project_id_here
 
 ### 2. Get Your Google API Credentials
 
-#### From Google Cloud Console:
+#### **From Google Cloud Console:**
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Select your project (`sundai-470018`)
+2. Select your project (`your-project-id`)
 3. Go to **APIs & Services** > **Credentials**
 4. Find your OAuth 2.0 Client ID
 5. Copy the **Client ID** and **Client Secret**
@@ -35,10 +35,18 @@ VITE_GOOGLE_PROJECT_ID=your_google_project_id_here
 Replace the placeholder values in your `.env` file:
 
 ```bash
-VITE_GOOGLE_CLIENT_ID=1093811853771-dl7umif4ossjdbjijrq0od23km3cctfp.apps.googleusercontent.com
-VITE_GOOGLE_CLIENT_SECRET=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
-VITE_GOOGLE_SHEET_ID=1qH4ydSWlRB8OaimUmJqCZvcufZ20K-s96o56MNSIdr0
-VITE_GOOGLE_PROJECT_ID=sundai-470018
+VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
+VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+VITE_GOOGLE_SHEET_ID=your_google_sheet_id_here
+VITE_GOOGLE_PROJECT_ID=your_google_project_id_here
+```
+
+**Example format (replace with your actual values):**
+```bash
+VITE_GOOGLE_CLIENT_ID=123456789-abcdefghijklmnop.apps.googleusercontent.com
+VITE_GOOGLE_CLIENT_SECRET=GOCSPX-YourSecretHere
+VITE_GOOGLE_SHEET_ID=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms
+VITE_GOOGLE_PROJECT_ID=your-project-name-123456
 ```
 
 ### 4. Restart Your Development Server
@@ -55,12 +63,14 @@ Check your browser console for the configuration log. You should see:
 
 ```
 🔧 Google API Configuration:
-  Project ID: sundai-470018
-  Client ID: 1093811853771-dl7umif4ossjdbjijrq0od23km3cctfp.apps.googleusercontent.com
-  Sheet ID: 1qH4ydSWlRB8OaimUmJqCZvcufZ20K-s96o56MNSIdr0
+  Project ID: your_project_id
+  Client ID: your_client_id
+  Sheet ID: your_sheet_id
   Redirect URI: http://localhost:8080/
   Scopes: ["https://www.googleapis.com/auth/spreadsheets"]
 ```
+
+**Note:** The actual values will be masked for security in production.
 
 ## Security Notes
 
