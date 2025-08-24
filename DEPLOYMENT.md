@@ -8,6 +8,18 @@ This guide explains how to deploy your CSV Profile Extractor app to Netlify whil
 2. **GitHub Repository** - Your code should be in a Git repository
 3. **Google Cloud Project** - With OAuth 2.0 credentials configured
 
+## ⚠️ Important: Build Dependencies
+
+**Before deploying, ensure these packages are in `dependencies` (not `devDependencies`):**
+- `vite` - Required for build process
+- `@vitejs/plugin-react-swc` - Vite React plugin
+- `typescript` - TypeScript compiler
+- `tailwindcss` - CSS framework
+- `autoprefixer` - CSS post-processor
+- `postcss` - CSS tooling
+
+**This is crucial for Netlify builds to succeed!**
+
 ## 📋 Step-by-Step Deployment
 
 ### 1. Prepare Your Repository
@@ -103,6 +115,21 @@ Ensure your repository has:
 ## 🚨 Common Issues & Solutions
 
 ### **Build Failures:**
+
+#### **"vite: not found" Error:**
+- **Problem**: `sh: 1: vite: not found` during build
+- **Solution**: Ensure `vite` and build tools are in `dependencies` (not `devDependencies`)
+- **Fix**: Move these packages to `dependencies`:
+  ```json
+  "vite": "^5.4.19",
+  "@vitejs/plugin-react-swc": "^3.11.0",
+  "typescript": "^5.8.3",
+  "tailwindcss": "^3.4.17",
+  "autoprefixer": "^10.4.21",
+  "postcss": "^8.5.6"
+  ```
+
+#### **Other Build Issues:**
 - **Check Node version** (use Node 18+)
 - **Verify dependencies** are in package.json
 - **Check build logs** for specific errors
