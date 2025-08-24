@@ -41,13 +41,6 @@ VITE_GOOGLE_SHEET_ID=your_google_sheet_id_here
 VITE_GOOGLE_PROJECT_ID=your_google_project_id_here
 ```
 
-**Example format (replace with your actual values):**
-```bash
-VITE_GOOGLE_CLIENT_ID=123456789-abcdefghijklmnop.apps.googleusercontent.com
-VITE_GOOGLE_CLIENT_SECRET=GOCSPX-YourSecretHere
-VITE_GOOGLE_SHEET_ID=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms
-VITE_GOOGLE_PROJECT_ID=your-project-name-123456
-```
 
 ### 4. Restart Your Development Server
 
